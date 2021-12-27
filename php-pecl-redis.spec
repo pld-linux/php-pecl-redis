@@ -71,7 +71,7 @@ phpize
 %{__make}
 
 export TEST_PHP_EXECUTABLE="%{__php}"
-export TEST_PHP_ARGS=" -n \
+export TEST_PHP_ARGS=" -n -q -d display_errors=off \
 	-dextension_dir=modules \
 %if "%php_major_version.%php_minor_version" < "7.4"
 	-dextension=%{php_extensiondir}/pcre.so \
@@ -79,7 +79,9 @@ export TEST_PHP_ARGS=" -n \
 %endif
 	-dextension=%{php_extensiondir}/simplexml.so \
 	-dextension=%{php_extensiondir}/session.so \
+%if "%php_major_version.%php_minor_version" < "8.0"
 	-dextension=%{php_extensiondir}/json.so \
+%endif
 	-dextension=%{modname}.so \
 "
 
