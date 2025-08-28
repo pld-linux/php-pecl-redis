@@ -14,17 +14,17 @@
 %define		modname	redis
 Summary:	%{modname} A PHP extension for Redis
 Name:		%{php_name}-pecl-%{modname}
-Version:	5.3.7
+Version:	6.2.0
 Release:	1
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	https://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	1ed6793902214cc02467666ba69dd2be
+# Source0-md5:	b713b42a7ad2eb6638de739fffd62c3a
 Source1:	https://github.com/ukko/phpredis-phpdoc/archive/9ec1795bcd45ec83a19b46cf9a8b78b4e4d7ac80/%{modname}-phpdoc.tar.gz
 # Source1-md5:	eaba2e5fad040e2f4526374c073ae5f7
 URL:		https://pecl.php.net/package/redis
 BuildRequires:	%{php_name}-cli
-BuildRequires:	%{php_name}-devel >= 4:7.0
+BuildRequires:	%{php_name}-devel >= 4:7.4
 BuildRequires:	%{php_name}-json
 BuildRequires:	%{php_name}-pcre
 BuildRequires:	%{php_name}-session
@@ -142,7 +142,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS README.markdown
+%doc CREDITS README.md
 %config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/*%{modname}.ini
 %attr(755,root,root) %{php_extensiondir}/%{modname}.so
 
