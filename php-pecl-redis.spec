@@ -12,14 +12,16 @@
 
 %define		php_name	php%{?php_suffix}
 %define		modname	redis
+%define		subver	RC1
+%define		rel	1
 Summary:	%{modname} A PHP extension for Redis
 Name:		%{php_name}-pecl-%{modname}
-Version:	6.2.0
-Release:	1
+Version:	6.4.0
+Release:	0.%{subver}.%{rel}
 License:	PHP 3.01
 Group:		Development/Languages/PHP
-Source0:	https://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	b713b42a7ad2eb6638de739fffd62c3a
+Source0:	https://pecl.php.net/get/%{modname}-%{version}%{subver}.tgz
+# Source0-md5:	9522229d2b14b00ed61380173a421be8
 Source1:	https://github.com/ukko/phpredis-phpdoc/archive/9ec1795bcd45ec83a19b46cf9a8b78b4e4d7ac80/%{modname}-phpdoc.tar.gz
 # Source1-md5:	eaba2e5fad040e2f4526374c073ae5f7
 URL:		https://pecl.php.net/package/redis
